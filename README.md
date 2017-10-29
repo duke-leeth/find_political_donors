@@ -11,7 +11,8 @@
 This program aims to identify possible donors for a variety of upcoming election campaigns.
 
 ### Data source
-The Federal Election Commission regularly publishes [campaign contributions](http://classic.fec.gov/finance/disclosure/ftpdet.shtml). This program focus on the data in 2015.
+The Federal Election Commission regularly publishes [campaign contributions](http://classic.fec.gov/finance/disclosure/ftpdet.shtml).
+This program focus on their 2015 data.
 
 ### Output
 1. `medianvals_by_zip.txt`: contains a calculated running median, total dollar amount and total number of contributions by recipient and zip code

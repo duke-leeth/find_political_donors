@@ -2,7 +2,7 @@
 #
 # File: find_political_donors.py
 # Python Version: Python 2.7
-# Require library:  heapq, sys
+# Required Module:  heapq, sys
 #
 # Summary:
 #   Take campaign contributions data published by Federal Election Commission,

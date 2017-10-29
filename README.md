@@ -56,14 +56,14 @@ This program should be run with the following requirement:
 
 Run the program with the following command within the root folder:
 
-        ~$ ./run.sh
+    ~$ ./run.sh
 
 
 
 # Testing
 Run the test with the following command within the `insight_testsuite` folder:
 
-  ~` ./run_tests.sh
+    ~$ ./run_tests.sh
 
 On a failed test, the output of `run_tests.sh` would be:
 

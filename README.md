@@ -20,7 +20,6 @@ The Federal Election Commission regularly publishes [campaign contributions](htt
 
 
 
-
 # Approach summary
 
 ### Batch processing
@@ -32,10 +31,8 @@ For each output file, I maintain a dictionary for each unique key pair, e.g. `(C
 ### Median Searching
 Leveraging MaxHeap and MinHeap can largely improve the runtime of median searching. Since finding median can be time consuming. In order not to make it take $O(N)$ time, where $N$ is the total numbers in a elements, maintaining two heap can make it into $O(logN)$ time. Keeping half smallest elements in a MaxHeap and the other half in MinHeap takes $O(logN)$ time, and always keep the size of MinHeap is no larger than size of MaxHeap plus one. If the size of the two heap is the same, the median is the average of top element of MaxHeap and that of MinHeap. If the size of the MinHeap equals to MaxHeap plus one, the the top element of MinHeap.
 
-
 ### Runtime Analysis
 The overall runtime is $O(N logN)$, where $N$ is the total lines in the input file.
-
 ##### Breakdown analysis:
 Reading $N$ lines takes $O(N)$:
   *  For each line:
@@ -45,6 +42,9 @@ Reading $N$ lines takes $O(N)$:
         *  Takes $O(1)$ to find the median value
 Therefore, it takes overall $O(N logN)$ runtime.
 
+##### Empirical runtime
+This program has been tested running on a 3.83GB file download from the [website](http://classic.fec.gov/finance/disclosure/ftpdet.shtml). It takes around 14 minutes on a Macbook Air 2014 with
+Intel Core i5 CPU 1.4 GHz, and 8GB memory.
 
 
 # Dependencies and Run Instructions
@@ -59,7 +59,6 @@ Run the program with the following command from within the root folder:
 
 
 # Testing
-
 Run the test with the following command from within the `insight_testsuite` folder:
 
   insight_testsuite~$ ./run_tests.sh

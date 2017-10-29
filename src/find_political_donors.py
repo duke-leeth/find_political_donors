@@ -211,8 +211,7 @@ def Output_by_DateFile(out_filename2):
     outlist_by_date = []
     sep = '|'
 
-    keys = sorted(dic_by_date.keys(), key=lambda tup: (tup[0],tup[1]) )
-
+    keys = sorted(dic_by_date.keys(), key=lambda tup: (tup[0],tup[1][4:]+tup[1][:4]) )
 
     for key in keys:
         val_new = dic_by_date[key]

@@ -52,7 +52,7 @@ Intel Core i5 CPU 1.4 GHz, and 8GB memory.
 # Dependencies and Run Instructions
 This program should be run with the following requirement:
 * Python Version: Python 2.7
-* Required Module: sys, heapq
+* Required Module: os, sys, heapq
 
 Run the program with the following command within the root folder:
 

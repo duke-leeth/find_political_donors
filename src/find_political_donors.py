@@ -2,7 +2,7 @@
 #
 # File: find_political_donors.py
 # Python Version: Python 2.7
-# Required Module:  heapq, sys
+# Required Module:  heapq, sys, os
 #
 # Summary:
 #   Take campaign contributions data published by Federal Election Commission,
@@ -15,6 +15,12 @@
 #   medianvals_by_zip.txt
 #   medianvals_by_date.txt
 #
+
+
+import sys
+import os
+import datetime
+from heapq import *
 
 
 dic_by_zip = {}  # (CMTE_ID, ZIP_CODE):[MedianSearch, Sum Amount]
@@ -43,7 +49,7 @@ def valid_ZIP_CODE(ZIP_CODE):
     return True
 
 
-import datetime
+
 def valid_TRANSACTION_DT(TRANSACTION_DT):
     """ Validation of transaction date format: mmddyyyy
         Args:   <TRANSACTION_DT: String>
@@ -107,7 +113,6 @@ def valid_ID_AMT_OtherID(CMTE_ID, TRANSACTION_AMT, OTHER_ID):
     return True
 
 
-from heapq import *
 class MedianSearch:
     """ MedianSearch Object to find the median of all the values
         Method:
@@ -232,6 +237,14 @@ def Process_file(in_filename, out_filename1, out_filename2):
         Return: void
     """
 
+    # Remove the existing output file
+    try:
+        os.remove(out_filename1)
+        os.remove(out_filename2)
+    except OSError:
+        pass
+
+
     BUF_SIZE = 1024*1024*20 # 20MB
 
     fin = open(in_filename,'r')
@@ -248,7 +261,6 @@ def Process_file(in_filename, out_filename1, out_filename2):
     Output_by_DateFile(out_filename2)
 
 
-import sys
 def main(argv=sys.argv):
     """ Execute with given input file, output files from command line
         Args:   <in_filename: String>,

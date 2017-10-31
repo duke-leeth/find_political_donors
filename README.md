@@ -26,7 +26,7 @@ This program focus on their 2015 data.
 ### Batch processing
 Batch reads from file and batch writes to file. Since it is reasonably to assume the size of input file is large (more than 1GB), reading one line at a time will result in longer time in total. Thus, I set the buffer size to 20MB to read from the input file, rather than reading single line at each time. Similarly, writing the median values to the file, `medianvals_by_zip.txt`, is done after a trunk of transactions has been read and processed.
 
-### Maintaining Dictionary
+### Maintaining Dictionaries
 For each output file, I maintain a dictionary for each unique key pair, e.g. `(CMTE_ID, ZIP_CODE)` for `medianvals_by_zip.txt` and `(CMTE_ID, TRANSACTION_DT)` for `medianvals_by_date.txt`, with a pair containing a MedianSearch object and total amount as value. As a result, accessing each key is very fast and easy to maintain the data in a structured manner.
 
 ### Median Searching
@@ -45,7 +45,7 @@ Reading `N` transactions takes `O(N)`:
 Therefore, it takes overall `O(N logN)` runtime.
 
 ##### Empirical runtime
-This program has been tested running on a 3.83GB input file download from the [website](http://classic.fec.gov/finance/disclosure/ftpdet.shtml). It takes around 14 minutes on a Macbook Air 2014 with
+This program has been tested running on a 3.83GB input file download from the [website](http://classic.fec.gov/finance/disclosure/ftpdet.shtml). It takes around 12 minutes on a Macbook Air 2014 with
 Intel Core i5 CPU 1.4 GHz, and 8GB memory.
 
 
